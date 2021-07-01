@@ -2,15 +2,15 @@ import React from "react";
 import "./App.css";
 import avatar from "./Images/img_avatar.png";
 
-const Card = () => {
+const Card = (props) => {
   return (
     <div className="card">
-      <img src={avatar} alt="Avatar" style={{ width: "100%" }} />
+      <img src={props.avatar} alt="Avatar" style={{ width: "100%" }} />
       <div className="container">
         <h4>
-          <b>John Doe</b>
+          <b>{props.name}</b>
         </h4>
-        <p>Architect & Engineer</p>
+        <p>{props.title}</p>
       </div>
     </div>
   );
