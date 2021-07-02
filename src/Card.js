@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import avatar from "./Images/img_avatar.png";
 
 const Card = (props) => {
   return (
@@ -11,6 +10,7 @@ const Card = (props) => {
           <b>{props.name}</b>
         </h4>
         <p>{props.title}</p>
+        <p>{props.children}</p>
       </div>
     </div>
   );
