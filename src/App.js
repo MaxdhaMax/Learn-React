@@ -1,8 +1,12 @@
+import React, { useState } from "react";
 import "./App.css";
 import Card from "./Card";
-import faker from "faker";
 
 function App() {
+  const [name, setName] = useState("max");
+  const changeName = () => {
+    setName("michael");
+  };
   const buttonsMarkup = (
     <div>
       <button className="button button2">Blue</button>
@@ -12,13 +16,10 @@ function App() {
 
   return (
     <div className="App">
-      <Card name={faker.name.firstName()} title={faker.name.jobTitle()} avatar={faker.image.avatar()}>
-        {buttonsMarkup}
-      </Card>
-      <Card name={faker.name.firstName()} title={faker.name.jobTitle()} avatar={faker.image.avatar()}>
-        {buttonsMarkup}
-      </Card>
-      <Card name={faker.name.firstName()} title={faker.name.jobTitle()} avatar={faker.image.avatar()}>
+      <button className="button" onClick={changeName}>
+        Change Name
+      </button>
+      <Card name={name} title="International Response Architect avatar" avatar="https://cdn.fakercloud.com/avatars/terrorpixel_128.jpg">
         {buttonsMarkup}
       </Card>
     </div>
