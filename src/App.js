@@ -4,9 +4,8 @@ import Card from "./Card";
 
 function App() {
   const [name, setName] = useState("max");
-  const changeName = () => {
-    setName("michael");
-  };
+  const changeName = (name) => setName(name);
+  const changeInput = (event) => setName(event.target.value);
   const buttonsMarkup = (
     <div>
       <button className="button button2">Blue</button>
@@ -16,10 +15,10 @@ function App() {
 
   return (
     <div className="App">
-      <button className="button" onClick={changeName}>
+      <button className="button" onClick={() => changeName("John")}>
         Change Name
       </button>
-      <Card name={name} title="International Response Architect avatar" avatar="https://cdn.fakercloud.com/avatars/terrorpixel_128.jpg">
+      <Card name={name} title="International Response Architect avatar" onChangeName={() => changeName("alan")} onChangeInput={changeInput} avatar="https://cdn.fakercloud.com/avatars/terrorpixel_128.jpg">
         {buttonsMarkup}
       </Card>
     </div>
